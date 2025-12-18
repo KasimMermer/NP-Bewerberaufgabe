@@ -22,21 +22,3 @@ function mermer_add_gift_card_text_area_field($checkout) {
         ),
     ), $checkout->get_value('mermer_gift_card_text_field'));
 }
-
-
-
-
-
-
-
-
-add_action('woocommerce_after_order_notes', 'test_hook');
-
-function test_hook($checkout) {
-    echo '<div style="background:red;color:white;display:flex;justify-content:center;">Hook klappt auch</div>';
-    echo '<h1>Hook hat funktioniert</h1>';
-}
-
-add_action('wp_footer', function () {
-    echo '<div style="background:red;color:white;display:flex;justify-content:center;">Plugin wird ausgeführt</div>';
-});
