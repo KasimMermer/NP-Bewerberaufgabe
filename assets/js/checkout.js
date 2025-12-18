@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const giftCardCheckbox = document.getElementById('mermer_gift_wrapping_checkbox');
 
     giftCardCheckbox.addEventListener('change', function () {
+        // Hier habe ich die Hilfe von ChatGPT in Anspruch genommen
         document.body.dispatchEvent(new Event('update_checkout'));
     });
 });

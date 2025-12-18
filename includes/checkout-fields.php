@@ -45,6 +45,7 @@ function mermer_update_gift_wrapping_session($posted_data) {
     obwohl das Kästchen nicht angekreuzt war. */
     parse_str($posted_data, $output);
 
+    // Für WC()->Session: https://woocommerce.github.io/code-reference/classes/WC-Session.html
     if (isset($output['mermer_gift_wrapping_checkbox'])) {
         WC()->session->set('mermer_gift_wrapping', true);
     } else {
