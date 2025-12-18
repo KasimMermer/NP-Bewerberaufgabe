@@ -5,6 +5,8 @@ defined('ABSPATH') || exit;
 /**
  * Enqueue der CSS- und JS-Dateien des Plugins.
  */
+
+// Verwendete Dokumentation: https://www.lake-studio.de/wordpress/einbinden-von-javascript-und-css-in-wordpress
 add_action( 'wp_enqueue_scripts', 'prefix_load_scripts' );
  
 function prefix_load_scripts() {
