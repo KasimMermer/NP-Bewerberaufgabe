@@ -1,5 +1,3 @@
-alert("hallo test");
-
 document.addEventListener('DOMContentLoaded', function() {
     const textAreaField = document.getElementById('mermer_gift_card_text_field');
     
