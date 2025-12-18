@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     giftCardCheckbox.addEventListener('change', function () {
         // Hier habe ich die Hilfe von ChatGPT in Anspruch genommen
         document.body.dispatchEvent(new Event('update_checkout'));
+        // Ende Hilfe von ChatGPT
 
         const existingGiftFeeDisplay = document.getElementById('gift-fee-display');
         if (!existingGiftFeeDisplay) {
