@@ -36,8 +36,7 @@ function mermer_add_gift_card_text_area_field($checkout) {
 function mermer_gift_wrapping_checkbox_field($checkout) {
     woocommerce_form_field('mermer_gift_wrapping_checkbox', array(
         'type' => 'checkbox',
-        'label' => 'Geschenkverpackung hinzufügen',     /* TODO: Wenn Checkbox aktiv ist, soll direkt unterhalb eine 
-                                                        kurze Info erscheinen: „Geschenkverpackung wird mit 4,99 € berechnet.“ */
+        'label' => 'Geschenkverpackung hinzufügen',
         'required' => false,
     ), $checkout->get_value('mermer_gift_wrapping_checkbox'));
 }
