@@ -20,22 +20,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Geschenkverpackung Checkbox
     const giftCardCheckbox = document.getElementById('mermer_gift_wrapping_checkbox');
+    const feeText = document.getElementById('mermer_gift_wrapping_fee');
 
     giftCardCheckbox.addEventListener('change', function () {
         // Hier habe ich die Hilfe von ChatGPT in Anspruch genommen
         document.body.dispatchEvent(new Event('update_checkout'));
         // Ende Hilfe von ChatGPT
-
-        const existingGiftFeeDisplay = document.getElementById('gift-fee-display');
-        if (!existingGiftFeeDisplay) {
-            const giftFeeDisplay = document.createElement('div');
-            giftFeeDisplay.id = 'gift-fee-display';
-            giftFeeDisplay.style.fontSize = '12px';
-            giftFeeDisplay.style.marginTop = '5px';
-            giftFeeDisplay.innerHTML = 'Geschenkverpackung wird mit 4,99 € berechnet.';
-            giftCardCheckbox.parentNode.appendChild(giftFeeDisplay);
-        }else {
-            existingGiftFeeDisplay.innerHTML = giftCardCheckbox.checked ? 'Geschenkverpackung wird mit 4,99 € berechnet.' : '';
+        
+        if (giftCardCheckbox.checked) {
+            feeText.style.display = 'block';
+        } else {
+            feeText.style.display = 'none';
         }        
     });
 });

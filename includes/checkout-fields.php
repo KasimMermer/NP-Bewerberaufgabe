@@ -39,6 +39,7 @@ function mermer_gift_wrapping_checkbox_field($checkout) {
         'label' => 'Geschenkverpackung hinzufügen',
         'required' => false,
     ), $checkout->get_value('mermer_gift_wrapping_checkbox'));
+    echo '<div id="mermer_gift_wrapping_fee" style="display:none;"><p>' . __('Geschenkverpackung Gebühr: 4,99 €') . '</p></div>';
 }
 
 // Funktion zum Aktualisieren der Sitzung basierend auf dem Kontrollkästchen
@@ -59,7 +60,7 @@ function mermer_update_gift_wrapping_session($posted_data) {
 function mermer_add_gift_wrapping_fee($cart) {
     // Lösung aus: https://stackoverflow.com/questions/77784479/custom-checkbox-in-woocommerce-admin-edit-product-for-a-payment-fee-calculation
     if(WC()->session->get('mermer_gift_wrapping')) {
-        $cart->add_fee('Geschenkverpackung', 4.99);
+        $cart->add_fee(__('Geschenkverpackung'), 4.99);
     }
 }
 
