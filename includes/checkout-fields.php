@@ -9,12 +9,15 @@ für "woocommerce_form_field"
 https://woocommerce.github.io/code-reference/hooks/hooks.html
 für "woocommerce_after_order_notes", 
 für "woocommerce_cart_calculate_fees" 
-und "woocommerce_checkout_update_order_review" */
+und "woocommerce_checkout_update_order_review" 
+
+Youtube Tutorial für "woocommerce_checkout_create_order" gekommen: https://www.youtube.com/watch?v=jGOYhWKH_Vk */
 
 add_action('woocommerce_after_order_notes', 'mermer_add_gift_card_text_area_field');
 add_action('woocommerce_after_order_notes', 'mermer_gift_wrapping_checkbox_field');
 add_action('woocommerce_cart_calculate_fees', 'mermer_add_gift_wrapping_fee');
 add_action('woocommerce_checkout_update_order_review', 'mermer_update_gift_wrapping_session');
+add_action('woocommerce_checkout_create_order', 'mermer_save_text_area_and_gift_wrapping_field');
 
 // Funktion zum Hinzufügen des Textbereichs für den Geschenkkartentext
 function mermer_add_gift_card_text_area_field($checkout) {
@@ -58,5 +61,15 @@ function mermer_add_gift_wrapping_fee($cart) {
     // Lösung aus: https://stackoverflow.com/questions/77784479/custom-checkbox-in-woocommerce-admin-edit-product-for-a-payment-fee-calculation
     if(WC()->session->get('mermer_gift_wrapping')) {
         $cart->add_fee('Geschenkverpackung', 4.99);
+    }
+}
+
+// Funktion zum Speichern der benutzerdefinierten Felder in der Bestellmeta
+function mermer_save_text_area_and_gift_wrapping_field($order) {
+    if (!empty($_POST['mermer_gift_card_text_field'])) {
+        $order->update_meta_data('mermer_gift_card_text_field', sanitize_textarea_field($_POST['mermer_gift_card_text_field']));
+    }
+    if (!empty($_POST['mermer_gift_wrapping_checkbox'])) {
+        $order->update_meta_data('mermer_gift_wrapping_checkbox', sanitize_text_field($_POST['mermer_gift_wrapping_checkbox']));
     }
 }

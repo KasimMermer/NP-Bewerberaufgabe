@@ -24,3 +24,4 @@ define('NPBA_DIR_URL', plugin_dir_url(__FILE__));
  */
 require_once NPBA_DIR_PATH . 'includes/assets.php';
 require_once NPBA_DIR_PATH . 'includes/checkout-fields.php';
+require_once NPBA_DIR_PATH . 'includes/order-details.php';
