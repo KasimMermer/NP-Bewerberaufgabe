@@ -23,8 +23,8 @@ add_action('woocommerce_checkout_create_order', 'mermer_save_text_area_and_gift_
 function mermer_add_gift_card_text_area_field($checkout) {
     woocommerce_form_field('mermer_gift_card_text_field', array(
         'type' => 'textarea',
-        'label' => 'Geschenkkartentext',
-        'placeholder' => 'Geben Sie hier Ihren Geschenkkartentext ein',
+        'label' => __('Geschenkkartentext'),
+        'placeholder' => __('Geben Sie hier Ihren Geschenkkartentext ein'),
         'required' => false,
         'custom_attributes' => array(
             'maxlength' => '500',
@@ -36,7 +36,7 @@ function mermer_add_gift_card_text_area_field($checkout) {
 function mermer_gift_wrapping_checkbox_field($checkout) {
     woocommerce_form_field('mermer_gift_wrapping_checkbox', array(
         'type' => 'checkbox',
-        'label' => 'Geschenkverpackung hinzufügen',
+        'label' => __('Geschenkverpackung hinzufügen'),
         'required' => false,
     ), $checkout->get_value('mermer_gift_wrapping_checkbox'));
     echo '<div id="mermer_gift_wrapping_fee" style="display:none;"><p>' . __('Geschenkverpackung Gebühr: 4,99 €') . '</p></div>';

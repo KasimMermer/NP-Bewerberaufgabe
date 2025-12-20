@@ -15,8 +15,8 @@ function mermer_show_gift_card_text_area_and_gift_wrapping_checkbox_field($order
     $gift_wrapping_checkbox = $order->get_meta('mermer_gift_wrapping_checkbox');
 
     if(!empty($gift_text)){
-        echo '<p>Geschenkkartentext: <br>' . esc_html($gift_text) . '</p>';
+        echo '<p>' . __('Geschenkkartentext:') . '<br>' . esc_html($gift_text) . '</p>';
     } 
 
-    echo '<p>Geschenkverpackung: </p>' . ($gift_wrapping_checkbox === '1' ? 'Ja' : 'Nein');
+    echo '<p>' . __('Geschenkverpackung:') . '</p>' . ($gift_wrapping_checkbox === '1' ? __('Ja') : __('Nein'));
 }
