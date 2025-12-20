@@ -12,4 +12,7 @@ add_action( 'wp_enqueue_scripts', 'prefix_load_scripts' );
 function prefix_load_scripts() {
     wp_register_script( 'script', plugins_url( '../assets/js/checkout.js', __FILE__ ), array(), '1.0.0', true );
     wp_enqueue_script( 'script' );
+
+    wp_register_style( 'style', plugins_url( '../assets/css/styles.css', __FILE__ ), array(), '1.0.0', 'all' );
+    wp_enqueue_style( 'style' );
 }

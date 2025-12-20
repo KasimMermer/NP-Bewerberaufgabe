@@ -41,7 +41,7 @@ function mermer_gift_wrapping_checkbox_field($checkout) {
         'label' => __('Geschenkverpackung hinzufügen'),
         'required' => false,
     ), $checkout->get_value('mermer_gift_wrapping_checkbox'));
-    echo '<div id="mermer_gift_wrapping_fee" style="display:none;"><p>' . __('Geschenkverpackung Gebühr: 4,99 €') . '</p></div>';
+    echo '<div id="mermer_gift_wrapping_fee" class="mermer-font-small" style="display:none;"><p>' . __('Geschenkverpackung Gebühr: 4,99 €') . '</p></div>';
 }
 
 // Funktion zum Aktualisieren der Sitzung basierend auf dem Kontrollkästchen

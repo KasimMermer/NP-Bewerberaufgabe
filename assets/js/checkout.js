@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     charCountDisplay.style.fontSize = '12px';
     charCountDisplay.style.marginTop = '5px';
     charCountDisplay.align = 'right';
+    charCountDisplay.className = 'mermer-char-count';
     charCountDisplay.textContent = `0 / ${maxLength}`;
 
     textAreaField.parentNode.appendChild(charCountDisplay);
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     textAreaField.addEventListener('input', function() {
         const currentLength = textAreaField.value.length;
         charCountDisplay.textContent = `${currentLength} / ${maxLength}`;
+        charCountDisplay.style.color = (`${currentLength}` === `${maxLength}`) ? '#ff0000' : '#2293c2';
     });
 
     // Geschenkverpackung Checkbox
