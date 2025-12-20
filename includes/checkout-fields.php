@@ -11,7 +11,9 @@ für "woocommerce_after_order_notes",
 für "woocommerce_cart_calculate_fees" 
 und "woocommerce_checkout_update_order_review" 
 
-Youtube Tutorial für "woocommerce_checkout_create_order" gekommen: https://www.youtube.com/watch?v=jGOYhWKH_Vk */
+Youtube Tutorial für "woocommerce_checkout_create_order" gekommen: https://www.youtube.com/watch?v=jGOYhWKH_Vk 
+ 
+i18n Tutorial: https://www.youtube.com/watch?v=v_O3LhrOkg8 */
 
 add_action('woocommerce_after_order_notes', 'mermer_add_gift_card_text_area_field');
 add_action('woocommerce_after_order_notes', 'mermer_gift_wrapping_checkbox_field');
