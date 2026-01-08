@@ -11,10 +11,10 @@ function mermer_add_gift_card_text_area_and_gift_wrapping_to_emails($order, $sen
     $gift_wrapping_checkbox = $order->get_meta('mermer_gift_wrapping_checkbox');
 
     if (!empty($gift_text)) {
-        echo '<h3>' . __('Geschenkkartentext') . ':</h3>';
+        echo '<h3>' . __('Geschenkkartentext', 'text-language') . ':</h3>';
         echo '<p>' . esc_html($gift_text) . '</p>';
     }
 
-    echo '<h3>' . __('Geschenkverpackung') . ':</h3>';
-    echo '<p>' . ($gift_wrapping_checkbox === '1' ? __('Ja') : __('Nein')) . '</p>';
+    echo '<h3>' . __('Geschenkverpackung', 'text-language') . ':</h3>';
+    echo '<p>' . ($gift_wrapping_checkbox === '1' ? __('Ja', 'text-language') : __('Nein', 'text-language')) . '</p>';
 }
